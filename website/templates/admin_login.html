@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Admin Login
+{% endblock title %}
+{% block content %}
+    <div class="container pb-5" style="padding-top: 6rem;">
+        <h1 class="text-capitalize text-center pb-4">Admin Login</h1>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <img class="img-fluid" src="{% static 'images/logo.jpeg'%}" alt="logo" style="border-radius: 200px;background-color: white">
+            </div>
+
+            <div class="col-md-8 col-sm-8 pt-5" style="background-color: whitesmoke;border-radius: 10px">
+                <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <i class="fa fa-user fa-2x"></i>
+                    <label for="admin" class="text-capitalize" style="font-weight: bold">Admin Name</label>
+                    <input type="text" class="form-control text-center text-capitalize" id="admin" name="name">
+                </div>
+                <div class="form-group">
+                    <i class="fa fa-lock fa-2x"></i>
+                    <label for="exampleInputPassword1" class="text-capitalize"
+                           style="font-weight: bold">Password</label>
+                    <input type="password" class="form-control text-center" id="exampleInputPassword1" name="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg btn btn-block" style="border-radius: 70px">Login</button>
+            </form>
+
+            </div>
+
+        </div>
+
+        </center>
+    </div>
+
+    {% ifequal error "no" %}
+        <script>
+            alert('Admin, you are now loged-In Now!')
+            window.location('/')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Invalid login credential, try again!')
+            window.location('/')
+        </script>
+    {% endifequal %}
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    View Self Paid Training
+{% endblock title %}
+{% block content %}
+<div class="container-fluid pb-5" style="margin-top: 8rem;">
+        <h2 class="text-capitalize text-center mt-5">View Applicstions of Student Self Paid Records</h2>
+        <div class="row text-center justify-content-center" style="margin-top: 6rem;">
+            <div class="col-md-12">
+                <table class=" table table-hover table-dark text-danger" id="example" style="border-radius: 4px">
+                <thead>
+                <tr class="text-white">
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in selfPaid %}
+                <tr class="text-capitalize">
+                    <td>{{ i.fname }}</td>
+                    <td>{{ i.lname }}</td>
+                    <td>{{ i.phone }}</td>
+                    <th>{{ i.email }}</th>
+                    <td>{{ i.address }}</td>
+                    <td><a class="btn btn-danger" href="/delete_SelfPaid/{{ i.pk }}" onclick="return confirm('Are you sure Delete')">Delete</a> </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+{% endblock content %}

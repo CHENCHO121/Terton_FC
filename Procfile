@@ -1,0 +1,1 @@
+web: gunicorn Terton_FC.wsgi

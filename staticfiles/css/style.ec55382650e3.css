@@ -1,0 +1,124 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+}
+
+ul li{
+    list-style-type: none;
+    text-transform: capitalize;
+}
+
+#match{
+    color: #bbbbbb;
+}
+
+.socialmedia li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.socialmedia li a:hover{
+    color:red;
+}
+
+.parallax {
+  /* The image used */
+    margin-top:3.4rem;
+    /* Set a specific height */
+  min-height: 610px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.contact{
+    position: absolute;
+    top: 400px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+}
+.contact li{
+    display: inline;
+    align-content: center;
+}
+.contact li a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    font-size: 22px;
+
+}
+.contact li a:hover{
+    color: #bbbbbb;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+.dropdown-menu a:hover{
+    background-color: black;
+
+}
+.nav-item a:hover{
+    color: white !important;
+    background-color: #bbbbbb;
+    border-radius: 20px;
+    transform: translateY(-3px);
+    transition:1.6s;
+}
+.about_li li{
+    display:inline-block;
+
+}
+.about_li li a{
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    text-decoration: none;
+}
+.about_li li a:hover{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+.old_age:hover{
+    background-color: cadetblue;
+    color: white;
+    transform: translateY(-10px);
+    transition:1.6s;
+    border-radius: 10px;
+
+
+}
+
+
+.card:hover{
+    border-radius: 100px;
+    box-shadow: 5px 5px 30px 5px black;
+    transform: translateY(-30px);
+    transition:1.6s;
+    border-radius:50px;
+}
+
+.card img:hover{
+    border-radius: 30px;
+}
+
+.card img{
+    border-radius:5px;
+
+}
+
+.gallery{
+    color: #bbbbbb;
+}

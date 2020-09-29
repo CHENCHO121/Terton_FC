@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Children Orphange
+{% endblock title %}
+{% load static %}
+{% block content %}
+    <div id="carouselExampleControls" class="carousel slide pb-5" data-ride="carousel" style="margin-top: 2rem;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 img-responsive" src="{% static 'images/orphan1.jpg' %}" alt="First slide">
+                <div class="carousel-caption d-md-block">
+                    <h1 class="text-capitalize text-center">they are future</h1>
+                    <p class="text-center text-capitalize">
+                        There are more 10,000 children are waiting in the foster care for their loving forever
+                        families.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 img-responsive" src="{% static 'images/orphan3.jpg' %}" alt="Second slide">
+                <div class="carousel-caption  d-md-block">
+                    <h1 class="text-capitalize text-center">give a child start</h1>
+                    <p class="text-center text-capitalize">
+                        We worry about a child will become tomorrow, yet we forget that he/she is someone today.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 img-responsive" src="{% static 'images/orphan2.png' %}" alt="Third slide">
+                <div class="carousel-caption  d-md-block">
+                    <h1 class="text-capitalize text-center">helping. healing. caring</h1>
+                    <p class="text-center text-capitalize">
+                        There can be no keener revelation of society's soul, then the way in which its treat he
+                        children.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-md-12 col-sm-12">
+                <p class="text-center">
+                    <span class="text-warning ">CHILDREN CHARITY MISSION</span>
+                </p>
+                <h2 class="text-justify" style="color: #999999">
+                    All children deserve to live in safe, nurturing homes
+                    where they can feel valued and loved.
+                </h2>
+
+            </div>
+        </div>
+
+
+        <div class="row pb-5">
+            <div class="col-md-12 col-sm-12 text-capitalize">
+                <p class="text-center">
+                    <span class="text-warning">our beliefs </span>
+                </p>
+                <h3 class="text-center" style="color: #999999">
+                    all children matter
+                </h3>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <figure>
+                    <img class="card-img-top" src="{% static 'images/orphan2.png' %}" alt="Card image cap">
+
+                </figure>
+            </div>
+            <div class="col-md-6 col-sm-6 text-center">
+                <h1>“Injustice anywhere </h1>
+                <h1>is a threat to justice </h1>
+                <h1>everywhere.”</h1>
+                <p style="float: right">Martin Luther King Jr.</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12 pb-5">
+                <p class="text-center">
+                    <span class="text-warning">OPEN YOUR HEART & HOME</span>
+                </p>
+                <h3 class="text-center" style="color: #999999">
+                    Join team in Foster Care
+                </h3>
+
+            </div>
+
+        </div>
+        <div class="row pb-5">
+
+                {% for i in orphan %}
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                        <div class="card bg-dark">
+                            <img class="card-img-top img-fluid" src="{{ i.image.url }}" alt="Card image cap">
+                            <div class="card-body text-center text-capitalize text-white">
+                                <h5 class="card-title">{{ i.name }}({{ i.age }})</h5>
+                                <p class="card-text text-white" style="color: #999999">{{ i.info }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+        </div>
+
+        <div class="row pb-5">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="text-center text-capitalize">Child Abuse Prevention</h2>
+                <p class="text-justify" style="color: #999999">
+                    Children under the age of 18 may be exposed to abuse and neglect by a parent, caregiver, or another
+                    person in a custodial role (e.g., clergy, coach, teacher). There are four common types of child
+                    abuse and neglect
+                </p>
+                <ul style="color: #999999">
+                    <li>1. Physical Abuse</li>
+                    <li>2. Sexual Abuse</li>
+                    <li>3. Emotional Abuse</li>
+                    <li>4. Neglect</li>
+                </ul>
+
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <figure>
+                    <img class="card-img-top" src="{% static 'images/orphan4.jpg' %}" alt="Card image cap">
+
+                </figure>
+
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-md-6 col-sm-6">
+                <figure>
+                    <img class="card-img-top" src="{% static 'images/orphan5.jpg' %}" alt="Card image cap">
+
+                </figure>
+
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h2 class="text-center text-capitalize">Foster Care & Adoption</h2>
+                <p class="text-justify" style="color: #999999">
+                    Children enter foster care through no fault of their own, because they have been abused, neglected,
+                    or abandoned. These children are in the temporary custody of the state while their birth parents are
+                    given the opportunity to complete services that will allow the children to be returned to them if it
+                    is in the children’s best interest.
+                    Adopting from foster care is similar to other types of adoption in that after all of the decision
+                    making, paperwork, and preparation are completed, a dream of family is fulfilled.
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="row pb-5">
+            <div class="col-md-12 col-sm-12">
+                <p class="text-center text-capitalize">
+                    <span class="text-warning">our work</span>
+                </p>
+                <h3 class="text-capitalize text-center" style="color: #999999">
+                    ever children has an opportunity to find a home
+                </h3>
+
+            </div>
+        </div>
+
+        <div class="row pb-5">
+            <div class="col-md-5 col-sm-5">
+                <figure>
+                    <img class="card-img-top" src="{% static 'images/orphan6.jpg' %}" alt="Card image cap">
+
+                </figure>
+
+            </div>
+            <div class="col-md-7 col-sm-7">
+                <h2 class="text-center text-capitalize">The Problem</h2>
+                <p class="text-justify" style="color: #999999">
+                    As you read this, 1000 of children are separated from their families, living in institutions or
+                    on the streets. Many survive with substandard care, unloved and at risk – all of them dreaming of a
+                    family. In the worst cases, this environment exposes children to devastating abuse and psychological
+                    trauma, creating adults who are 10x more likely to become sex workers and 50x more likely to be in
+                    prison.
+                </p>
+                <p class="text-justify" style="color: #999999">
+                    But, we are also in the midst of a profound paradigm shift. Efforts are being made to reform foster
+                    care systems, support families before separation occurs and reunite families where preventable
+                    separation has occurred. We all know kids everywhere deserve better.
+                    A movement has begun and Miracle Foundation is on the front line.
+
+                </p>
+            </div>
+
+        </div>
+        <div class="row pb-5">
+
+            <div class="col-md-7 col-sm-7">
+                <h2 class="text-center text-capitalize">solution</h2>
+                <p class="text-justify" style="color: #999999">
+                    Our work in the past was grounded in helping orphans in need to have a better quality of life but
+                    has evolved to also ensure that every child has an opportunity to grow up in a family. Our goal is
+                    to prevent children from entering the system in the first place.
+                </p>
+
+            </div>
+            <div class="col-md-5 col-sm-5">
+                <figure>
+                    <img class="card-img-top" src="{% static 'images/orphan7.jpg' %}" alt="Card image cap">
+
+                </figure>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row pb-5">
+        <div class="col-md-12 col-sm-12">
+            <figure>
+                <img src="{% static 'images/orphan8.jpg' %}" alt="Card image cap" height="400px" width="100%">
+            </figure>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-md-12 col-sm-12">
+                <h2 class="text-justify">
+                    Supporting orphans while bringing about sustainable change that reduces the need for orphanages
+                </h2>
+                <p class="text-justify" style="color: #999999">
+                    We have improved the lives of more than 15,000 vulnerable children and orphans in need and impacted
+                    more
+                    than 300 orphanages in India.
+                    Our approach is rooted in years of on-the-ground experience, driven by a careful methodology and
+                    powered by a deep passion to improve the lives of children and give them a chance to grow up in a
+                    family.
+                    We believe in collaboration as we know this work is bigger than any one organization. We are part of
+                    a global network of nonprofit organizations leading the worldwide movement to end the need for
+                    orphanages by 2040.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock content %}

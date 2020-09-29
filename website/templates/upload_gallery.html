@@ -1,0 +1,82 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    Upload Gallery
+{% endblock title %}
+{% block content %}
+    <div class="container pb-5" style="margin-top: 6rem;">
+        <h1 class="text-capitalize text-center pb-5">Upload Gallery</h1>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 pb-5">
+                <form method="post" enctype="multipart/form-data" action="/upload_gallery_orphane">
+                    {% csrf_token %}
+                    <fieldset>
+					<legend>Upload Orphange Gallery</legend>
+                        <div class="panel panel-default">
+						<div class="panel-body">
+                            <input type="file" name="image" required>
+                        </div>
+					</div>
+                        <input type="submit" class="btn btn-primary btn-lg mt-2" value="Upload">
+
+				</fieldset>
+
+                </form>
+
+            </div>
+            <div class="col-md-6 col-sm-6 pb-5">
+                <form method="post" enctype="multipart/form-data" action="/upload_gallery_old_age">
+                    {% csrf_token %}
+                    <fieldset>
+					<legend>Upload Old Age Gallery</legend>
+                        <div class="panel panel-default">
+						<div class="panel-body">
+                            <input type="file" name="image" required>
+                        </div>
+					</div>
+                        <input type="submit" class="btn btn-primary btn-lg mt-2" value="Upload">
+
+				</fieldset>
+
+                </form>
+
+            </div>
+            <div class="col-md-6 col-sm-6 pb-5">
+                <form method="post" enctype="multipart/form-data" action="/upload_gallery_football_player">
+                    {% csrf_token %}
+                    <fieldset>
+					<legend>Upload Student Gallery</legend>
+                        <div class="panel panel-default">
+						<div class="panel-body">
+                            <input type="file" name="image" required>
+                        </div>
+					</div>
+                        <input type="submit" class="btn btn-primary btn-lg mt-2" value="Upload">
+
+				</fieldset>
+
+                </form>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+    {% ifequal error "no" %}
+        <script>
+            alert('Photo Uploaded successfully')
+            window.location('/upload_gallery')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/upload_gallery')
+        </script>
+    {% endifequal %}
+{% endblock content %}

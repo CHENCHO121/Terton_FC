@@ -1,0 +1,40 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    View Old Age
+{% endblock title %}
+{% block content %}
+<div class="container pb-5" style="margin-top: 8rem;">
+        <h2 class="text-capitalize text-center mt-5">view Old Age Records</h2>
+        <div class="row text-center justify-content-center" style="margin-top: 6rem;">
+        <div class="col-md-12">
+            <table class=" table table-hover table-dark text-danger" id="example" style="border-radius: 4px">
+                <thead>
+                <tr class="text-white">
+
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Introduction</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in oldAge %}
+                <tr class="text-capitalize">
+                    <td><img class="img-circle" src="{{ i.image.url }}" alt="images" height="100px" style="border-radius:100px"></td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.age }}</td>
+                    <td>{{ i.info }}</td>
+                    <td><a class="btn btn-danger" href="/delete_old_age/{{ i.pk }}" onclick="return confirm('Are you sure Delete')">Delete</a> </td>
+                    <td><a class="btn btn-warning text-white" href="/update_old_age/{{ i.pk }}" onclick="return confirm('Are you sure for Update')">Update</a> </td>
+
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+
+{% endblock content %}

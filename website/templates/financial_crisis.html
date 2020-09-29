@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Financial Crisis
+{% endblock title %}
+{% load static %}
+{% block content %}
+    <div class="mt-5 pb-5">
+        <figure>
+            <div class="col-md-5 "
+                 style="background-color: #6DDCBD;opacity: 0.8; position: absolute;margin-top: 6rem;%">
+                <h3 class="text-center text-white">
+                    We can provide you with a range of financial support and advice.
+                </h3>
+            </div>
+            <img class="card-img-top" src="{% static 'images/crisis1.png' %}" alt="Card image cap" width="100%">
+
+
+        </figure>
+
+    </div>
+    <div class="container-fluid" style="background-color:whitesmoke">
+        <div class="row pb-5 mt-5">
+            <div class="col-md-3 col-sm-3" style="background-color: white">
+                <h2 class="text-center text-capitalize ">
+                    <button class=" text-white btn btn-warning btn btn-lg btn-block">
+                        Who Can We Help?
+                    </button>
+                </h2>
+            </div>
+            <div class="col-md-9 col-sm-9">
+                <h3 class="text-capitalize text-center text-warning" style="background-color: white">
+                    Introduction to Parents or Guardians seeking assistance
+                </h3>
+                <p class="text-justify" style="background-color: white;color: #999999">
+                    A good home and school life are the core foundations for every young person. Circumstances such as
+                    parental or guardian illness, unemployment or bereavement can interrupt an educational path to the
+                    detriment of emotional development and educational progress. While we do our best to assist as many
+                    applicants as possible, applying for assistance does not guarantee that funding can be provided.
+
+
+                    Most of our charities carry out a means-tested financial assessment to ensure that funding is
+                    provided to those applicants in the greatest need.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container pb-5">
+        <h2 class="text-center text-capitalize text-warning pb-5"> financial Support for helpless student</h2>
+        <div class="row">
+            <div class="col-md-4 pb-5">
+                <div>
+                    <h3>Supporting vulnerable children with educational grants</h3>
+                    <p>
+                        The Educational Charity is a community of charity which provide financial grants to help
+                        vulnerable children.
+                    </p>
+                </div>
+                <button class="btn btn-block btn btn-warning btn btn-lg">
+                    <h3 class="text-white">Do register the form!</h3>
+                </button>
+            </div>
+            <div class="col-md-8" style="background-color: #aaaaaa;border-radius: 15px">
+                <form method="post" class="pt-3 text-white">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name" name="fname" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name" name="lname" required>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="col">
+                            <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Age" name="age">
+                        </div>
+                        <div class="col">
+                           <label for="education">School Year</label>
+                            <select id="education" name="education" class="form-control" required>
+                                <option value="nursury">Nursery</option>
+                                <option value="primary">primary</option>
+                                <option value="secondary">secondary</option>
+                                <option value="further/higher">Further/Higher</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Address" name="address" required>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col">
+                            <label for="reason">Reason for applying</label>
+                            <select id="reason" name="reason" class="form-control" required>
+                                <option value="Parent/Guardian Incapacitated">Parent/Guardian Incapacitated</option>
+                                <option value="Single Parent">Single Parent</option>
+                                <option value="At Risk">At Risk</option>
+                                <option value="Vulnerable">Vulnerable</option>
+                                <option value="Financial">Financial</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="age">Age range</label>
+                            <select id="age" name="age_range" class="form-control" required>
+                                <option value="15 to 18">0-10</option>
+                                <option value="15 to 18">10-18</option>
+                                <option value="18 to 25">18-25</option>
+                                <option value="25 to 30">25-30</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="school type">School Type</label>
+                            <select id="school type" name="school_type" class="form-control" required>
+                                <option value="boarding">Boarding</option>
+                                <option value="independent">Independent</option>
+                                <option value="other">Other</option>
+
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="Support For">Support For</label>
+                            <select id="Support For" name="support_for" class="form-control" required>
+                                <option value="Education Fees">Education Fees</option>
+                                <option value="Supplementary Costs">Supplementary Costs</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-outline-success btn btn-lg btn-block text-white">Register</button>
+                    <br>
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h3 class="text-center text-white"
+                    style="background-color: #6DDCBD;opacity: 0.7; position: absolute;margin-top: 5rem; width: 400px;">
+                    Transforming the lives of children through education.
+                </h3>
+                <img class="card-img-top" src="{% static 'images/crisis2.jpg' %}" alt="Card image cap" width="100%">
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-md-12 pb-5">
+                <h2 class="text-center text-warning">
+                    We are here to provide the support you need!
+                </h2>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <figure>
+                    <img class="card-img-top" src="{% static 'images/crisis3.jpg' %}" alt="Card image cap">
+
+                </figure>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h3 class="text-justify"> Here is a list of reasons grants might be awarded, based on:</h3>
+                <ul style="font-size: 18px;color: #999999">
+                    <li>where you live</li>
+                    <li>your financial circumstances</li>
+                    <li>what your parents or sometimes other relatives do for a living</li>
+                    <li>any illnesses or disabilities you may have</li>
+
+                    <li>whether you are the first in your family to attend university</li>
+                    <li>any circumstances which present you with particular barriers to education</li>
+                    <li>if you have specific career aspirations</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+     {% ifequal error "no" %}
+        <script>
+            alert('Your Registration is successfully done, we will contact you soon!')
+            window.location('/financial')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/financial')
+        </script>
+    {% endifequal %}
+{% endblock content %}

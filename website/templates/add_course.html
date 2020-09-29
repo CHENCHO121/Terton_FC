@@ -1,0 +1,45 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    Add Course
+{% endblock title %}
+{% block content %}
+    <div class="container pb-5" style="margin-top: 6rem;">
+        <h1 class="text-capitalize text-center pb-5">Add Course</h1>
+        <center>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="file" class="text-capitalize" style="font-weight: bold">Image</label>
+                        <input type="file" class="form-control text-center" id="file" name="image" required>
+                    </div>
+                    <div class="form-group col-md-6 col-md-6">
+                        <label for="name" class="text-capitalize" style="font-weight: bold">Course Name </label>
+                        <input type="text" class="form-control text-center text-capitalize" id="name" name="name"
+                               required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary col-md-3" style="border-radius: 70px">Submit</button>
+            </form>
+        </center>
+
+
+    </div>
+
+    {% ifequal error "no" %}
+        <script>
+            alert('Course saved successfully ')
+            window.location('/add_course')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/add_course')
+        </script>
+    {% endifequal %}
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    Add Events
+{% endblock title %}
+{% block content %}
+    <div class="container pb-5" style="margin-top: 6rem;">
+        <h1 class="text-capitalize text-center pb-5">Add Events</h1>
+        <center>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="file" class="text-capitalize" style="font-weight: bold">Image</label>
+                        <input type="file" class="form-control text-center" id="file" name="image" required>
+                    </div>
+                    <div class="form-group col-md-6 col-md-6">
+                        <label for="name" class="text-capitalize" style="font-weight: bold">Event Name</label>
+                        <input type="text" class="form-control text-center text-capitalize" id="name" name="name"
+                               required>
+                    </div>
+                    <div class="form-group col-md-6  col-md-6">
+                        <label for="date" class="text-capitalize" style="font-weight: bold">Date</label>
+                        <input type="datetime-local" class="form-control text-center" id="date" name="date" required>
+                    </div>
+                    <div class="form-group col-md-6  col-md-6">
+                        <label for="des" class="text-capitalize" style="font-weight: bold">Description</label>
+                        <textarea class="form-control text-center" id="des" name="description" required></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary col-md-3" style="border-radius: 70px">Submit</button>
+            </form>
+        </center>
+
+
+    </div>
+
+    {% ifequal error "no" %}
+        <script>
+            alert('Events saved successfully ')
+            window.location('/add_event')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/add_event')
+        </script>
+    {% endifequal %}
+{% endblock content %}

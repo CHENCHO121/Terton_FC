@@ -1,0 +1,55 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    Add Academy Information
+{% endblock title %}
+{% block content %}
+    <div class="container pb-5" style="margin-top: 6rem;">
+        <h1 class="text-capitalize text-center pb-5">Add Academy Information</h1>
+        <center>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="fs" class="text-capitalize" style="font-weight: bold"> About Full Scholarship</label>
+                        <textarea name="full_scholarship" class="form-control" id="fs"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="hs" class="text-capitalize" style="font-weight: bold">About Half Scholarship</label>
+                        <textarea name="half_scholarship" class="form-control" id="hs"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="sf" class="text-capitalize" style="font-weight: bold">About Self Paid Training</label>
+                        <textarea name="self_paid" class="form-control" id="sf"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tr" class="text-capitalize" style="font-weight: bold">About Training</label>
+                        <textarea name="training" class="form-control" id="tr"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="football" class="text-capitalize" style="font-weight: bold">About Football</label>
+                        <textarea name="football"  class="form-control" id="football"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary col-md-3" style="border-radius: 70px">Add</button>
+            </form>
+        </center>
+
+
+    </div>
+
+    {% ifequal error "no" %}
+        <script>
+            alert('Details saved successfully ')
+            window.location('/add_academy_detail')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/add_academy_detail')
+        </script>
+    {% endifequal %}
+{% endblock content %}

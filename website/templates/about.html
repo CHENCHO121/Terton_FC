@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    About Us
+{% endblock title %}
+{% block content %}
+    <div class="parallax img-fluid" style="background-image: url('{% static "images/logo.jpeg" %}')">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 m-auto" style="height: 180px">
+                <ul class="about_li text-center" style="padding-top: 4rem;">
+                    <li><a class="text-capitalize " href=""> <i class="fa fa-home"></i> home</a></li>
+                    <li class="text-dark">/</li>
+                    <li><a class="text-capitalize" href=""><i class="fa fa-address-book"> </i> about</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--about us-->
+        <div class="row">
+            <div class="col-md-6  col-sm-6 pb-5">
+                <div class="card">
+                    <img class="card-img-top " src="{% static 'images/team1.jpg' %}" alt="Card image cap"
+                         height="500px">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">Tshewang Penjor</h5>
+                        <p class="card-text">Founder of Terton FC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6  col-sm-6">
+                <h2 class="text-capitalize text-center">About Us</h2>
+                <p class="text-justify">
+                    FC Terton is a professional football club from Thimphu, Bhutan, which plays in Dzongkhag League,
+                    after relegation from Bhutan Super League.
+                    Terton made their debut in the 2015 Thimphu League, which they won by three points from Thimphu,
+                    collecting the Nu 400,000 first prize and qualifying for the 2015 Bhutan National League. During
+                    their inaugural season in the Thimphu League, they lost only twice; a 5–3 defeat to Druk Star and a
+                    3–1 loss to eventual runners-up Thimphu.They were equally successful in their debut season in
+                    the National League, beating Thimphu City 4–2 in the final game to confirm the championship,
+                    collecting the Nu 10 million first place prize and qualifying for the 2017 AFC Cup
+                </p>
+            </div>
+
+        </div>
+        <!--our team-->
+        <h2 class="text-center text-capitalize mt-5" style="margin-top: 2rem">our team</h2>
+        <div class="row pb-5" style="margin-top:3rem">
+            <div class="col-md-3 col-sm-4 col-xs-6 mt-5">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{% static 'images/team7.jpg' %}" alt="Card image cap" height="250px">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">Yuden Lhamo</h5>
+                        <p class="card-text">Administration Officer</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6  mt-5">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/team8.jpg' %}" alt="Card image cap" height="250px">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">Tshering Yangzom</h5>
+                        <p class="card-text">Procurement</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6  mt-5">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/team10.jpg' %}" alt="Card image cap" height="250px">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">Kesang Tashi</h5>
+                        <p class="card-text">General Manager</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6  mt-5">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/team2.jpg' %}" alt="Card image cap" height="250px">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">Kinley Phuntsho</h5>
+                        <p class="card-text">Marketing Manager</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6  mt-5">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/team5.jpg' %}" alt="Card image cap" height="250px">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">Bal Bdr Subba</h5>
+                        <p class="card-text">General Secretary</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

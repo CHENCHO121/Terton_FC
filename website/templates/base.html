@@ -1,0 +1,155 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image" href="{% static 'images/logo.jpeg' %}">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<body>
+<!--Navbar start-->
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #6DDCBD;opacity: 1.0">
+    <img src="{% static 'images/logo.jpeg' %}" alt="pic"  style="border-radius: 100px;height:150px">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse bg-dark " id="navbarSupportedContent" style="border-radius: 20px">
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-white" href="/"><i class="fa fa-home"></i> Home <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#"><i class="fa fa-heart"></i> Donate</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/academy"><i class="fa fa-soccer-ball-o"></i> Football Academy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/galleryshow"><i class="fa fa-image"></i> Gallery</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/about"><i class="fa fa-address-book"> </i> About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"><i class="fa fa-heart"></i>
+                    Charity
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-white text-white" href="/orphanage">Orphanage</a>
+                    <a class="dropdown-item text-white text-white" href="/old_age_home">Old Age home</a>
+                    <a class="dropdown-item text-white text-white" href="/financial">Financial Crisis</a>
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/contact"><i class="fa fa-phone"></i> Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/admin_login"><i class="fa fa-user"></i> ADMIN LOGIN</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!--Navbar end here-->
+
+
+{% block content %}
+{% endblock content %}
+
+<footer>
+    <div class="container-fluid text-light bg-dark">
+        <div class="container">
+            <div class="row pb-5" style="padding-top: 4rem;">
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <h2>Terton FC</h2>
+                    <p class="mt-3"><a class="text-white" href="tel:+0097517717355"> <i class="fa fa-phone"></i>
+                        (+975)17717355</a></p>
+                    <p class="mt-3"><a class="text-white" href="tel:+0097512692011"> <i class="fa fa-phone"></i>
+                        (+975)17692011</a></p>
+                    <p class="mt-3"><a class="text-white" href="mailto:tertonfc@gmail.com"><i
+                            class="fa fa-envelope-square"></i> tertonfc@gmail.com</a></p>
+                    <p class="mt-3"><i class="fa fa-address-book"></i> Changzamtog, Near Changzamtog school, Thimphu</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <h2 class="text-capitalize">top club</h2>
+                    <ul>
+                        <li>paro fc</li>
+                        <li>thimphu city fc</li>
+                        <li>transport united</li>
+                        <li>ugyen academy</li>
+                        <li>high quality united</li>
+                        <li>paro united</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <h2 class="text-capitalize">social media</h2>
+                    <ul class="socialmedia text-white">
+                        <li>
+                            <a href="https://www.facebook.com/search/top?q=terton%20football%20club"><i
+                                    class="fa fa-facebook"></i> Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i> Instagarm</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-youtube"></i> Instagarm</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</footer>
+<section class="text-center my-3 pt-4 pb-3">
+    <span><strong> All Copyright &copy;2020 All rights reserved by Terton FC | Developed with by Chencho Gyeltshen</strong></span>
+</section>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

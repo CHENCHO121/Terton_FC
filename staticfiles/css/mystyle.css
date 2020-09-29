@@ -1,0 +1,20 @@
+.schlr:hover{
+    background-color: #79aec8;
+    transform: translateY(-30px);
+    transition:1.6s;
+    border-radius:50px;
+    color: white;
+    height: 272px;
+
+}
+
+.schlr{
+    background-color: #efefef;
+    border-radius:20px;
+    border: 1px solid #bbccdd;
+    height: 272px;
+}
+.card img{
+    border-radius:5px;
+
+}

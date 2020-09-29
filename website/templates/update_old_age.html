@@ -1,0 +1,53 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block title %}
+    Update Old Age
+{% endblock title %}
+{% block content %}
+<div class="container pb-5" style="margin-top: 8rem;">
+<h1 class="text-capitalize text-center pb-5">Edit Old Age Records</h1>
+        <center>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+               <div class="row">
+                   <div class="form-group col-md-6 col-sm-6">
+                       <label for="file">Image</label>
+                       <input type="file" class="form-control text-center " id="file" name="image"
+                              value="{{ data.image.url }}" required>
+                   </div>
+                   <div class="form-group col-md-6 col-sm-6">
+                       <label for="name" class="text-capitalize" style="font-weight: bold">Name</label>
+                       <input type="text" class="form-control text-center text-capitalize" id="name" name="name"
+                              value="{{ data.name }}" required>
+                   </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="age" class="text-capitalize" style="font-weight: bold">Age</label>
+                    <input type="text" class="form-control text-center" id="age" name="age" value="{{ data.age }}" required>
+                </div>
+                 <div class="form-group col-md-6 col-sm-6">
+                    <label for="info" class="text-capitalize" style="font-weight: bold">Introduction</label>
+                    <input type="text" class="form-control text-center" id="info" name="info" value="{{ data.info }}" required>
+                </div>
+
+               </div>
+
+                <button type="submit" class="btn btn-primary col-md-3" style="border-radius: 70px">Update</button>
+            </form>
+        </center>
+
+</div>
+    {% ifequal error "no" %}
+        <script>
+            alert('Record Updated successful!');
+            window.location('/update_old_age');
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong, try again!');
+            window.location('/update_old_age');
+        </script>
+    {% endifequal %}
+
+{% endblock content %}

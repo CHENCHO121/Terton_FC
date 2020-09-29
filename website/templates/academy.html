@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Football Academy
+{% endblock title %}
+{% block content %}
+
+    <div class="row pb-5">
+        <div class="col-md-12 col-sm-12">
+            <h1 class="text-capitalize text-white text-center pb-5"
+                style="padding-top:10rem; width:100%;height: 300px; background-color: #6DDCBD">Our Academy Courses</h1>
+        </div>
+    </div>
+
+    <!--Courses Start here-->
+
+    <div class="container-fluid pb-5">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h2 class="text-capitalize  text-center pb-5" style="color: #aaaaaa">Popular Courses</h2>
+            </div>
+            {% for i in course %}
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img class="card-img-top img-fluid mt-5" src="{{ i.image.url }}" alt="Card image cap">
+                    <div class="card-body text-center text-capitalize">
+                        <h5 class="card-title">{{ i.name }}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <!--Scholarship-->
+
+    <div class="container pb-5">
+        <h2 class="text-center text-capitalize pb-5" style="color: #aaaaaa">About scholarship</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 text-center mt-5" data-toggle="modal" data-target="#exampleModalLong">
+                <div class="schlr">
+                    <i class="fa fa-adn fa-5x text-primary pt-5"></i>
+                    <h4 class="text-center pt-4 pb-2">About Full scholarship</h4>
+                    <button class="btn btn-primary">Read more...</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 text-center mt-5" data-toggle="modal" data-target="#exampleModalLong1">
+                <div class="schlr">
+                    <i class="fa fa-adjust fa-5x text-primary pt-5"></i>
+                    <h4 class="text-center pt-4 pb-2">About Half scholarship</h4>
+                    <button class="btn btn-primary">Read more...</button>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-6 text-center mt-5" data-toggle="modal" data-target="#exampleModalLong2">
+                <div class="schlr">
+                    <i class="fa fa-paypal fa-5x text-primary pt-5"></i>
+                    <h4 class="text-center pt-4 pb-2">About Self Paid</h4>
+                    <button class="btn btn-primary">Read more...</button>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 text-center mt-5" data-toggle="modal" data-target="#exampleModalLong3">
+                <div class="schlr">
+                    <i class="fa fa-500px fa-5x text-primary pt-5"></i>
+                    <h4 class="text-center pt-4 pb-2">About training</h4>
+                    <button class="btn btn-primary">Read more...</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 text-center  mt-5" data-toggle="modal" data-target="#exampleModalLong4">
+                <div class="schlr">
+                    <i class="fa fa-soccer-ball-o fa-5x text-primary pt-5"></i>
+                    <h4 class="text-center pt-4 pb-2">About Football</h4>
+                    <button class="btn btn-primary">Read more...</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Modal Start here-->
+
+    <div class="container">
+        <!-- Modal About full Scholarship-->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-capitalize text-center" id="exampleModalLongTitle"> full
+                            Scholarship</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {% for i in academy %}
+                        <p class="text-justify">{{ i.full_scholarship }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal About half Scholarship-->
+    <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-capitalize text-center" id="exampleModalLongTitle"> half
+                        Scholarship</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <div class="modal-body">
+                        {% for i in academy %}
+                        <p class="text-justify">{{ i.half_scholarship }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal About self paid-->
+    <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-capitalize text-center" id="exampleModalLongTitle">Self paid</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <div class="modal-body">
+                        {% for i in academy %}
+                        <p class="text-justify">{{ i.self_paid }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal About training-->
+    <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-capitalize text-center" id="exampleModalLongTitle">Training</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        {% for i in academy %}
+                        <p class="text-justify">{{ i.training }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal About about-->
+    <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-capitalize text-center" id="exampleModalLongTitle">Football</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        {% for i in academy %}
+                        <p class="text-justify">{{ i.football }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!--Applying For scholarship-->
+
+    <div class="row pb-5">
+        <div class="col-md-6 col-sm-6" style="background-color: #6DDCBD;height: 300px">
+            <h2 class="text-center text-capitalize text-white" style="margin-top: 5rem;">To Apply for Scholarship</h2>
+            <h3 class="text-capitalize text-center text-danger">Click below</h3>
+            <center>
+                <button class="btn btn-warning btn-lg text-white" data-toggle="modal" data-target="#exampleModalLong12">
+                    Apply For Scholarship
+                </button>
+            </center>
+        </div>
+        <div class="col-md-6 col-sm-6" style="background-color: #6DDCBD;height: 300px">
+            <h2 class="text-center text-capitalize text-white" style="margin-top: 5rem;">Do register for self paid
+                training</h2>
+            <h3 class="text-capitalize text-center text-danger">Click below</h3>
+            <center>
+                <button class="btn btn-warning btn-lg text-white" data-toggle="modal" data-target="#exampleModalLong13">
+                    Register
+                </button>
+            </center>
+        </div>
+
+    </div>
+
+
+
+    <!--modal for scholarship-->
+    <div class="container">
+
+        <div class="modal fade" id="exampleModalLong12" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-warning" id="exampleModalLongTitle">Apply For Scholarship</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-white" style="background-color: #aaaaaa">
+                        <div class="container">
+                            <form method="post" action="/scholarship_form">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" class="form-control" id="fname" name="fname"
+                                               placeholder="First name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" class="form-control" id="lname" name="lname"
+                                               placeholder="Last name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="father">Father Name(If don't, leave blank)</label>
+                                        <input type="text" class="form-control" id="father" name="father"
+                                               placeholder="Father name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="mother">Mother(If don't, leave blank</label>
+                                        <input type="text" class="form-control" id="mother" name="mother"
+                                               placeholder="Last name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="age">Age</label>
+                                        <input type="text" class="form-control" id="age" name="age" placeholder="Age"
+                                               required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                               placeholder="Phone Number" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               placeholder="Email" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="qla">Qualification</label>
+                                        <input type="text" class="form-control" id="qla" name="qualification"
+                                               placeholder="Qualification" required>
+                                    </div>
+                                    <div class="col-md-12 pb-5">
+                                        <label for="address">Address</label>
+                                        <textarea class="form-control" id="address" name="address" required></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-info btn-block text-white"
+                                        style="font-weight: bolder">Submit
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--modal registration for self paid-->
+    <div class="container">
+
+        <div class="modal fade" id="exampleModalLong13" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Register For Self Paid Training</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-white" style="background-color: #aaaaaa">
+                        <div class="container">
+                            <form method="post" action="/self_training">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" class="form-control" id="fname" name="fname"
+                                               placeholder="First name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" class="form-control" id="lname" name="lname"
+                                               placeholder="Last name" required>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                               placeholder="Phone Number" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               placeholder="Email" required>
+                                    </div>
+                                    <div class="col-md-12 pb-5">
+                                        <label for="address">Address</label>
+                                        <textarea class="form-control" id="address" name="address" required></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-info btn-block text-white"
+                                        style="font-weight: bolder">Submit
+                                </button>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+     {% ifequal error1 "no" %}
+        <script>
+            alert('Your registration for scholarship is successfully done, We will contact you soon!')
+            window.location('/scholarship_form')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error1 "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/scholarship_form')
+        </script>
+    {% endifequal %}
+
+
+     {% ifequal error2 "no" %}
+        <script>
+            alert('Your registration for training is successfully done, We will contact you soon!')
+            window.location('/self_training')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error2 "yes" %}
+        <script>
+            alert('Something went wrong, try again!')
+            window.location('/self_training')
+        </script>
+    {% endifequal %}
+
+{% endblock content %}
