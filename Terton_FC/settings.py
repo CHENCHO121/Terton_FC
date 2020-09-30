@@ -115,13 +115,10 @@ USE_TZ = True
 AWS_ACCESS_KEY_ID = 'AKIAUD2U2BROZJOE4NTQ'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'tertonfc'
-AWS_S3_FILE_OVERWRITE=False
-AWS_DEFAULT_ACL=None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_REGION_NAME = 'us-east-2'
 
 
-AWS_S3_REGION_NAME = 'ap-south-1'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -132,10 +129,11 @@ STATIC_FILES_DIRS=(
     os.path.join(BASE_DIR,'static')
 )
 
-STATIC_ROOT=os.path.join(BASE_DIR,'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", 'staticfiles')
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
+AWS_DEFAULT_ACL=None
 
 django_heroku.settings(locals())
 
